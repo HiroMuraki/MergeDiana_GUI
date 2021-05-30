@@ -100,8 +100,8 @@ namespace MergeDiana.GameLib {
                 }
             }
             // 生成两个初始草莓
-            GenerateRandomDisk();
-            GenerateRandomDisk();
+            GenerateRandomStrawberry();
+            GenerateRandomStrawberry();
             UpdateGameStatus();
             OnPropertyChanged(nameof(DianaStrawberryArray));
         }
@@ -129,7 +129,7 @@ namespace MergeDiana.GameLib {
                     break;
             }
             Moved?.Invoke(this, new MovedEventArgs(direction));
-            GenerateRandomDisk();
+            GenerateRandomStrawberry();
             UpdateGameStatus();
         }
         /// <summary>
@@ -299,7 +299,7 @@ namespace MergeDiana.GameLib {
                 return false;
             }
         }
-        private void GenerateRandomDisk() {
+        private void GenerateRandomStrawberry() {
             // 搜索可以填充的空白区
             List<Coordinate> nullCoordinates = new List<Coordinate>();
             for (int row = 0; row < _rowSize; row++) {
