@@ -14,7 +14,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type View:DButton}">
                     <Grid>
-                        <Border x:Name="FocusedBackground" Background="Transparent" Opacity="0.5"
+                        <Border x:Name="FocusedBackground" Background="Transparent" Opacity="0.15"
                                 CornerRadius="5"/>
                         <Label x:Name="ArrowIcon" Opacity="0.75" Foreground="White"
                                FontSize="{TemplateBinding FontSize}"
@@ -74,6 +74,19 @@
                             <Setter Property="Foreground" Value="{StaticResource AccentTheme}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type View:StrawberryRound}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type View:StrawberryRound}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                    </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
