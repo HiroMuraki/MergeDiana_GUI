@@ -166,9 +166,9 @@
                               ToolTip="目标">
                     </ComboBox>
                     <Label Grid.Column="0" Grid.Row="0" Width="20" Foreground="White" FontSize="14" Content="{Binding GameSetter.RowSize}"/>
-                    <Slider Grid.Column="1" Grid.Row="0" Minimum="3" ToolTip="行数" Maximum="6" Value="{Binding GameSetter.RowSize}" VerticalAlignment="Center" Style="{StaticResource RSliderBarStyle}"/>
+                    <Slider Grid.Column="1" Grid.Row="0" ToolTip="行数" Minimum="{Binding GameSetter.MinSize}" Maximum="{Binding GameSetter.MaxSize}" Value="{Binding GameSetter.RowSize}" VerticalAlignment="Center" Style="{StaticResource RSliderBarStyle}"/>
                     <Label Grid.Column="0" Grid.Row="1" Width="20" Foreground="White" FontSize="14" Content="{Binding GameSetter.ColumnSize}"/>
-                    <Slider Grid.Column="1" Grid.Row="1" Minimum="3" ToolTip="列数" Maximum="6" Value="{Binding GameSetter.ColumnSize}" VerticalAlignment="Center" Style="{StaticResource RSliderBarStyle}"/>
+                    <Slider Grid.Column="1" Grid.Row="1" ToolTip="列数" Minimum="{Binding GameSetter.MinSize}" Maximum="{Binding GameSetter.MaxSize}" Value="{Binding GameSetter.ColumnSize}" VerticalAlignment="Center" Style="{StaticResource RSliderBarStyle}"/>
                 </Grid>
                 <Button Grid.Row="2" Content="S T A R T" Width="200" Height="40" Style="{StaticResource StartButtonStyle}" Click="StartGame_Click"/>
             </Grid>

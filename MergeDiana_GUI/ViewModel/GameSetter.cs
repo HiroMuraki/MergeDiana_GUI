@@ -6,9 +6,9 @@ using System.ComponentModel;
 
 namespace MergeDiana_GUI.ViewModel {
     public class GameSetter : INotifyPropertyChanged {
-        public readonly static int MaxRange = 6;
-        public readonly static int MinRagne = 3;
-        public readonly static Dictionary<DianaStrawberryType, string> TargetName = new Dictionary<DianaStrawberryType, string>() {
+        private readonly static int _maxRange = 5;
+        private readonly static int _minRagne = 3;
+        private readonly static Dictionary<DianaStrawberryType, string> _targetName = new Dictionary<DianaStrawberryType, string>() {
             [DianaStrawberryType.I] = "圣诞",
             [DianaStrawberryType.J] = "新年",
             [DianaStrawberryType.K] = "头像",
@@ -19,12 +19,13 @@ namespace MergeDiana_GUI.ViewModel {
             [DianaStrawberryType.P] = "初始-高级",
         };
 
-        public event PropertyChangedEventHandler PropertyChanged;
         private int _rowSize;
         private int _columnSize;
         private DianaStrawberryType _gameTarget;
         private int _skillPoint;
         private ObservableCollection<DianaStrawberryType> _targetStrawberries;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public ObservableCollection<DianaStrawberryType> TargetStrawberries {
             get {
@@ -55,6 +56,16 @@ namespace MergeDiana_GUI.ViewModel {
                 GetSkillPoint();
                 GetTargetStrawberries();
                 OnPropertyChanged(nameof(RowSize));
+            }
+        }
+        public int MaxSize {
+            get {
+                return _maxRange;
+            }
+        }
+        public int MinSize {
+            get {
+                return _minRagne;
             }
         }
         public DianaStrawberryType GameTarget {
@@ -93,12 +104,10 @@ namespace MergeDiana_GUI.ViewModel {
             if (minRange >= 4) {
                 _targetStrawberries.Add(DianaStrawberryType.K);
                 _targetStrawberries.Add(DianaStrawberryType.L);
+                _targetStrawberries.Add(DianaStrawberryType.M);
             }
             if (minRange >= 5) {
-                _targetStrawberries.Add(DianaStrawberryType.M);
                 _targetStrawberries.Add(DianaStrawberryType.N);
-            }
-            if (minRange >= 6) {
                 _targetStrawberries.Add(DianaStrawberryType.O);
                 _targetStrawberries.Add(DianaStrawberryType.P);
             }
@@ -149,10 +158,10 @@ namespace MergeDiana_GUI.ViewModel {
                     _skillPoint += 6;
                     break;
                 case DianaStrawberryType.O:
-                    _skillPoint += 8;
+                    _skillPoint += 10;
                     break;
                 case DianaStrawberryType.P:
-                    _skillPoint += 10;
+                    _skillPoint += 14;
                     break;
                 default:
                     _skillPoint += 0;
