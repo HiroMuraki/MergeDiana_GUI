@@ -153,9 +153,9 @@ namespace MergeDiana.GameLib {
                         int aCol = currentIndex % _columnSize;
                         int bRow = rndIndex / _columnSize;
                         int bCol = rndIndex % _columnSize;
-                        var t = _dianaStrawberries[aRow, aCol];
-                        _dianaStrawberries[aRow, aCol] = _dianaStrawberries[bRow, bCol];
-                        _dianaStrawberries[bRow, bCol] = t;
+                        var t = _dianaStrawberries[aRow, aCol].StrawberryType;
+                        _dianaStrawberries[aRow, aCol].StrawberryType = _dianaStrawberries[bRow, bCol].StrawberryType;
+                        _dianaStrawberries[bRow, bCol].StrawberryType = t;
                     }
                     break;
                 case MergeDianaGameSkill.DegradeAll:

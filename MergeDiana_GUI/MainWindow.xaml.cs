@@ -216,6 +216,10 @@ namespace MergeDiana_GUI {
             _skillActivedTimes = 0;
             // 开始游戏
             _game.StartGame(_gameSetter.RowSize, _gameSetter.ColumnSize, _gameSetter.GameTarget, _gameSetter.SkillPoint);
+            StrawberryDisplayer.Children.Clear();
+            foreach (var strawberry in _game.DianaStrawberryArray) {
+                StrawberryDisplayer.Children.Add(new View.StrawberryRound(strawberry));
+            }
             // 开始计时
             _gameTimer.Start();
         }

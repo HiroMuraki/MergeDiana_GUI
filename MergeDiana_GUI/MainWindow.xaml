@@ -124,15 +124,11 @@
                     <View:DButton x:Name="DownButton" Grid.Row="2" Grid.Column="1" Direction="Down" DClick="Move_DClick"/>
                     <View:DButton x:Name="LeftButton" Grid.Row="1" Grid.Column="0" Direction="Left" DClick="Move_DClick"/>
                     <View:DButton x:Name="RightButton" Grid.Row="1" Grid.Column="2" Direction="Right" DClick="Move_DClick"/>
-                    <ItemsControl Grid.Row="1" Grid.Column="1" x:Name="StrawberryDisplayer" ItemsSource="{Binding Game.DianaStrawberryArray}" ItemTemplate="{StaticResource StrawberryRound}">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <UniformGrid Rows="{Binding Game.RowSize}" Columns="{Binding Game.ColumnSize}">
 
-                                </UniformGrid>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                    </ItemsControl>
+                    <UniformGrid Grid.Row="1" Grid.Column="1" x:Name="StrawberryDisplayer" Rows="{Binding Game.RowSize}" Columns="{Binding Game.ColumnSize}">
+
+                    </UniformGrid>
+
                     <Canvas Grid.RowSpan="3" Grid.ColumnSpan="3" x:Name="GamePlayAreaCanvas" Width="500" Height="500">
                     </Canvas>
                 </Grid>
