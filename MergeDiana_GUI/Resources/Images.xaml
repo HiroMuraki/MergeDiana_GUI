@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ImageBrush x:Key="A" ImageSource="/MergeDiana_GUI;component/Resources/Images/1.png"/>
+    <ImageBrush x:Key="B" ImageSource="/MergeDiana_GUI;component/Resources/Images/2.png"/>
+    <ImageBrush x:Key="C" ImageSource="/MergeDiana_GUI;component/Resources/Images/3.png"/>
+    <ImageBrush x:Key="D" ImageSource="/MergeDiana_GUI;component/Resources/Images/4.png"/>
+    <ImageBrush x:Key="E" ImageSource="/MergeDiana_GUI;component/Resources/Images/5.png"/>
+    <ImageBrush x:Key="F" ImageSource="/MergeDiana_GUI;component/Resources/Images/6.png"/>
+    <ImageBrush x:Key="G" ImageSource="/MergeDiana_GUI;component/Resources/Images/7.png"/>
+    <ImageBrush x:Key="H" ImageSource="/MergeDiana_GUI;component/Resources/Images/8.png"/>
+    <ImageBrush x:Key="I" ImageSource="/MergeDiana_GUI;component/Resources/Images/9.png"/>
+    <ImageBrush x:Key="J" ImageSource="/MergeDiana_GUI;component/Resources/Images/10.png"/>
+    <ImageBrush x:Key="K" ImageSource="/MergeDiana_GUI;component/Resources/Images/11.png"/>
+    <ImageBrush x:Key="L" ImageSource="/MergeDiana_GUI;component/Resources/Images/12.png"/>
+    <ImageBrush x:Key="M" ImageSource="/MergeDiana_GUI;component/Resources/Images/13.png"/>
+    <ImageBrush x:Key="N" ImageSource="/MergeDiana_GUI;component/Resources/Images/14.png"/>
+    <ImageBrush x:Key="O" ImageSource="/MergeDiana_GUI;component/Resources/Images/15.png"/>
+    <ImageBrush x:Key="P" ImageSource="/MergeDiana_GUI;component/Resources/Images/15.png"/>
+
+    <ImageBrush x:Key="RArrow" ImageSource="/MergeDiana_GUI;component/Resources/Images/Arrow.png"/>
+</ResourceDictionary>
