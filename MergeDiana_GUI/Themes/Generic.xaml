@@ -22,7 +22,6 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsHovered" Value="True">
-                            <Setter TargetName="FocusedBackground" Property="Background" Value="#ef7780" />
                             <Setter TargetName="ArrowIcon" Property="Opacity" Value="1" />
                             <Setter TargetName="ArrowIcon" Property="FontSize" Value="22" />
                             <Setter TargetName="ArrowIcon" Property="Foreground" Value="{StaticResource AccentTheme}" />
