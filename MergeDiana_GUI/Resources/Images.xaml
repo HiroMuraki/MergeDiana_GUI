@@ -11,11 +11,9 @@
     <ImageBrush x:Key="I" ImageSource="/MergeDiana_GUI;component/Resources/Images/9.png"/>
     <ImageBrush x:Key="J" ImageSource="/MergeDiana_GUI;component/Resources/Images/10.png"/>
     <ImageBrush x:Key="K" ImageSource="/MergeDiana_GUI;component/Resources/Images/11.png"/>
-    <ImageBrush x:Key="L" ImageSource="/MergeDiana_GUI;component/Resources/Images/12.png"/>
+    <ImageBrush x:Key="L" ImageSource="/MergeDiana_GUI;component/Resources/Images/11.png"/>
     <ImageBrush x:Key="M" ImageSource="/MergeDiana_GUI;component/Resources/Images/13.png"/>
     <ImageBrush x:Key="N" ImageSource="/MergeDiana_GUI;component/Resources/Images/14.png"/>
     <ImageBrush x:Key="O" ImageSource="/MergeDiana_GUI;component/Resources/Images/15.png"/>
     <ImageBrush x:Key="P" ImageSource="/MergeDiana_GUI;component/Resources/Images/15.png"/>
-
-    <ImageBrush x:Key="RArrow" ImageSource="/MergeDiana_GUI;component/Resources/Images/Arrow.png"/>
 </ResourceDictionary>

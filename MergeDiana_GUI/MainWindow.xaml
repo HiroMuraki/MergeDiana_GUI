@@ -146,7 +146,7 @@
                     <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
                 <Ellipse Width="200" Height="200"
-                         StrokeThickness="3" Stretch="Uniform"
+                         StrokeThickness="5" Stretch="Uniform"
                          Stroke="{Binding GameSetter.GameTarget,Converter={StaticResource StrawberryTypeToColorFrame}}" 
                          Fill="{Binding GameSetter.GameTarget,Converter={StaticResource StrawberryTypeToImage}}">
                 </Ellipse>
