@@ -5,7 +5,6 @@
 
     <Style TargetType="{x:Type View:DButton}">
         <Setter Property="Foreground" Value="White" />
-        <Setter Property="Background" Value="{StaticResource RArrow}" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="FontSize" Value="18" />
@@ -83,10 +82,14 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type View:StrawberryRound}">
-                    <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
-                    </Border>
+                    <Viewbox>
+                        <Grid Margin="10">
+                            <Ellipse Width="100" Height="100" StrokeThickness="3" Stretch="Uniform"
+                                     Stroke="{Binding StrawberryType,Converter={StaticResource StrawberryTypeToColorFrame},RelativeSource={RelativeSource TemplatedParent}}" 
+                                     Fill="{Binding StrawberryType,Converter={StaticResource StrawberryTypeToImage},RelativeSource={RelativeSource TemplatedParent}}">
+                            </Ellipse>
+                        </Grid>
+                    </Viewbox>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

@@ -58,7 +58,8 @@ namespace MergeDiana_GUI.View {
             if (e == DianaStrawberryType.None) {
                 return;
             }
-            _transform.BeginAnimation(RotateTransform.AngleProperty, _animation);
+            _transform.BeginAnimation(ScaleTransform.ScaleXProperty, _animation);
+            _transform.BeginAnimation(ScaleTransform.ScaleYProperty, _animation);
         }
     }
 }
