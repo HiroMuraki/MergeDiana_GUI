@@ -29,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MergeDiana\MergeDiana\MergeDiana.csproj" />
+    <ProjectReference Include="..\MergeDiana\MergeDiana.csproj" />
   </ItemGroup>
 
   <ItemGroup>
