@@ -1,4 +1,4 @@
-﻿namespace MergeDiana.GameLib {
+﻿namespace MergeDiana {
     public enum MergeDianaGameSkill {
         None,
         Randomize,

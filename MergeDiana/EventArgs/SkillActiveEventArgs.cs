@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MergeDiana.GameLib {
+namespace MergeDiana {
     public class SkillActiveEventArgs : EventArgs {
         private MergeDianaGameSkill _activedSkill;
         private bool _activeResult;

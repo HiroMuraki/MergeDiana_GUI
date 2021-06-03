@@ -1,4 +1,4 @@
-﻿using MergeDiana.GameLib;
+﻿using MergeDiana;
 using System;
 using System.Globalization;
 using System.Windows.Data;

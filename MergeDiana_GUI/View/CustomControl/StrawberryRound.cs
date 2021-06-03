@@ -13,7 +13,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MergeDiana.GameLib;
+using MergeDiana;
 
 namespace MergeDiana_GUI.View {
     public class StrawberryRound : Control {

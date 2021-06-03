@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace MergeDiana.GameLib {
+namespace MergeDiana {
     using DianaStrawberryArray = IEnumerable<DianaStrawberry>;
     public sealed class MergeDianaGame : INotifyPropertyChanged {
         private int _rowSize;

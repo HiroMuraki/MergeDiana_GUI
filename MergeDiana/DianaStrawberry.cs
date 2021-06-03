@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace MergeDiana.GameLib {
+namespace MergeDiana {
     public class DianaStrawberry : INotifyPropertyChanged {
         private DianaStrawberryType _strawberryType;
 

@@ -83,12 +83,18 @@
                 <ControlTemplate TargetType="{x:Type View:StrawberryRound}">
                     <Viewbox>
                         <Grid Margin="10">
+                            <Ellipse x:Name="FakeShadow" Width="100" Height="100" Margin="3,5,0,0" Fill="Black" Opacity="0.30"/>
                             <Ellipse Width="100" Height="100" StrokeThickness="3" Stretch="Uniform"
                                      Stroke="{Binding Strawberry.StrawberryType,Converter={StaticResource StrawberryTypeToColorFrame},RelativeSource={RelativeSource TemplatedParent}}" 
                                      Fill="{Binding Strawberry.StrawberryType,Converter={StaticResource StrawberryTypeToImage},RelativeSource={RelativeSource TemplatedParent}}">
                             </Ellipse>
                         </Grid>
                     </Viewbox>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Strawberry.StrawberryType,RelativeSource={RelativeSource Self}}" Value="None">
+                            <Setter TargetName="FakeShadow" Property="Fill" Value="Transparent" />
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

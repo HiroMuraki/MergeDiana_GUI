@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MergeDiana.GameLib {
+namespace MergeDiana {
     public class GameCompletedEventArgs : EventArgs {
         private DianaStrawberryType _gameTarget;
         private int _totalScores;

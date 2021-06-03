@@ -1,4 +1,4 @@
-﻿using MergeDiana.GameLib;
+﻿using MergeDiana;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

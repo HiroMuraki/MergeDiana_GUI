@@ -1,4 +1,4 @@
-﻿namespace MergeDiana.GameLib {
+﻿namespace MergeDiana {
     public enum Direction {
         None,
         Up,

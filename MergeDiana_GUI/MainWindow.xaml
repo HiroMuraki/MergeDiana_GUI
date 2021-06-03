@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MergeDiana_GUI"
         xmlns:View="clr-namespace:MergeDiana_GUI.View"
-        xmlns:ViewModel="clr-namespace:MergeDiana.GameLib;assembly=MergeDiana"
+        xmlns:ViewModel="clr-namespace:MergeDiana;assembly=MergeDiana"
         mc:Ignorable="d" DataContext="{Binding RelativeSource={RelativeSource Self}}"
         WindowStartupLocation="CenterScreen" KeyDown="GameKey_KeyDown"
         Title="Strawberry" Height="690" Width="650" ResizeMode="NoResize">

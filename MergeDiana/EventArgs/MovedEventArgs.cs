@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MergeDiana.GameLib {
+namespace MergeDiana {
     public class MovedEventArgs : EventArgs {
         private Direction _direction;
         public Direction Direction {

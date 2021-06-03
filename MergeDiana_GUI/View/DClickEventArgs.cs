@@ -1,4 +1,4 @@
-﻿using MergeDiana.GameLib;
+﻿using MergeDiana;
 using System.Windows;
 
 namespace MergeDiana_GUI {

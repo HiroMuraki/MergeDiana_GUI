@@ -1,4 +1,4 @@
-﻿using MergeDiana.GameLib;
+﻿using MergeDiana;
 using MergeDiana_GUI.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -29,8 +29,7 @@ namespace MergeDiana_GUI {
         private GameSetter _gameSetter;
         private Point _hitPos;
         private Line _directionLine;
-        private DispatcherTimer _gameTimer;
-        private long _gameUsingTime;
+        private DateTime _startTime;
         private int _movedTimes;
         private int _skillActivedTimes;
 
@@ -46,11 +45,6 @@ namespace MergeDiana_GUI {
         }
 
         public MainWindow() {
-            // 设置计时器
-            _gameTimer = new DispatcherTimer() {
-                Interval = TimeSpan.FromMilliseconds(50)
-            };
-            _gameTimer.Tick += GameTimer_Tick;
             // 初始化后台数据
             _game = new MergeDianaGame();
             _game.GameCompleted += Game_GameCompleted;
@@ -104,8 +98,6 @@ namespace MergeDiana_GUI {
             }
         }
         private void Game_GameCompleted(object sender, GameCompletedEventArgs e) {
-            // 停止计时
-            _gameTimer.Stop();
             // 模糊背景
             BlurEffect effect = new BlurEffect();
             DoubleAnimation effectAnimation = new DoubleAnimation() {
@@ -118,7 +110,7 @@ namespace MergeDiana_GUI {
             effect.BeginAnimation(BlurEffect.RadiusProperty, effectAnimation);
             // 弹出统计窗口
             var gameTarget = _game.GameTarget;
-            var gameUsingTime = _gameUsingTime / 1000.0;
+            var gameUsingTime = (DateTime.Now - _startTime).TotalMilliseconds / 1000.0;
             var movedTimes = _movedTimes;
             var skillActivedTimes = _skillActivedTimes;
             var totalScores = e.TotalScores;
@@ -128,9 +120,6 @@ namespace MergeDiana_GUI {
             // 取消模糊背景
             GameArea.Effect = null;
             ExpandGameSetterPanel();
-        }
-        private void GameTimer_Tick(object sender, EventArgs e) {
-            _gameUsingTime += 50;
         }
         private void Game_SkillActived(object sender, SkillActiveEventArgs e) {
             if (e.ActiveResult == true) {
@@ -210,7 +199,6 @@ namespace MergeDiana_GUI {
         /// </summary>
         private void StartGame() {
             // 重置统计信息
-            _gameUsingTime = 0;
             _movedTimes = 0;
             _skillActivedTimes = 0;
             // 开始游戏
@@ -220,7 +208,7 @@ namespace MergeDiana_GUI {
                 StrawberryDisplayer.Children.Add(new View.StrawberryRound(strawberry));
             }
             // 开始计时
-            _gameTimer.Start();
+            _startTime = DateTime.Now;
         }
         /// <summary>
         /// 通过坐标计算方向

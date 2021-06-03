@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace MergeDiana.GameLib {
+namespace MergeDiana {
     public enum DianaStrawberryType {
         [Description("0")]
         None = 0b0000_0000_0000_0000, // 无，表示空

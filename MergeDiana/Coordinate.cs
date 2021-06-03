@@ -1,4 +1,4 @@
-﻿namespace MergeDiana.GameLib {
+﻿namespace MergeDiana {
     public readonly struct Coordinate {
         private readonly int _row;
         private readonly int _column;
