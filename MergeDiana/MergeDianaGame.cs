@@ -16,6 +16,7 @@ namespace MergeDiana {
         public event EventHandler<GameCompletedEventArgs> GameCompleted;
         public event EventHandler<SkillActiveEventArgs> SkillActived;
         public event EventHandler<MovedEventArgs> Moved;
+        public event EventHandler<MergedEventArgs> Merged;
         #endregion
 
         #region 公开属性
@@ -292,6 +293,7 @@ namespace MergeDiana {
             else if (DianaStrawberry.IsSameType(_dianaStrawberries[aRow, aCol], _dianaStrawberries[bRow, bCol])) {
                 _dianaStrawberries[bRow, bCol].Upgrade();
                 _dianaStrawberries[aRow, aCol].Reset();
+                Merged?.Invoke(this, new MergedEventArgs(_dianaStrawberries[bRow, bCol].StrawberryType));
                 return true;
             }
             // 未知情况
