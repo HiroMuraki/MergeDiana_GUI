@@ -53,7 +53,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Grid.Column="0" Content="完成用时(秒)：" Style="{StaticResource InfTitleLabelStyle}"/>
-                <Label Grid.Row="0" Grid.Column="1" Content="{Binding GameUsingTime}" Style="{StaticResource InfLabelStyle}"/>
+                <Label Grid.Row="0" Grid.Column="1" Content="{Binding GameUsingTime,StringFormat={}{0:F3}}" Style="{StaticResource InfLabelStyle}"/>
                 <Label Grid.Row="1" Grid.Column="0" Content="移动次数(步)：" Style="{StaticResource InfTitleLabelStyle}"/>
                 <Label Grid.Row="1" Grid.Column="1" Content="{Binding MovedTimes}" Style="{StaticResource InfLabelStyle}"/>
                 <Label Grid.Row="2" Grid.Column="0" Content="技能使用(次)：" Style="{StaticResource InfTitleLabelStyle}"/>
