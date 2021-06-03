@@ -106,8 +106,8 @@
                 <Button Grid.Column="3" Content="&#x2573;" Click="Window_Close" Style="{StaticResource TitleButtonStyle}"/>
             </Grid>
         </Grid>
-        <Grid x:Name="GameArea" Grid.Row="1" Background="{StaticResource DianaTheme}"
-              MouseUp="GameGesture_MouseUp" MouseDown="GameGesture_MouseDown" MouseMove="GameGesture_MouseMove">
+        <Grid x:Name="GameArea" Grid.Row="1" MouseUp="GameGesture_MouseUp" MouseDown="GameGesture_MouseDown" MouseMove="GameGesture_MouseMove">
+            <Image Source="/MergeDiana_GUI;component/Resources/Images/BACKGROUND.png" Stretch="UniformToFill" HorizontalAlignment="Center"/>
             <Viewbox Grid.Row="1" Grid.Column="1" Margin="5">
                 <Grid Width="512" Height="512" >
                     <Grid.RowDefinitions>

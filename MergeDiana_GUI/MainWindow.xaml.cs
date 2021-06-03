@@ -56,11 +56,10 @@ namespace MergeDiana_GUI {
             _game.GameCompleted += Game_GameCompleted;
             _game.SkillActived += Game_SkillActived;
             _game.Moved += Game_Moved;
-            _gameSetter = new GameSetter {
-                RowSize = 4,
-                ColumnSize = 4,
-                GameTarget = DianaStrawberryType.K
-            };
+            _gameSetter = GameSetter.GetInstance();
+            _gameSetter.RowSize = 4;
+            _gameSetter.ColumnSize = 4;
+            _gameSetter.GameTarget = DianaStrawberryType.K;
             // 初始化方向线
             _directionLine = new Line {
                 StrokeThickness = 5,

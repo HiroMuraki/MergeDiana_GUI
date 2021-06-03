@@ -6,6 +6,8 @@ using System.ComponentModel;
 
 namespace MergeDiana_GUI.ViewModel {
     public class GameSetter : INotifyPropertyChanged {
+        private static GameSetter _singletonObject;
+        private static object _singletonLocker = new object();
         private readonly static int _maxRange = 5;
         private readonly static int _minRagne = 3;
         private readonly static Dictionary<DianaStrawberryType, string> _targetName = new Dictionary<DianaStrawberryType, string>() {
@@ -68,6 +70,11 @@ namespace MergeDiana_GUI.ViewModel {
                 return _minRagne;
             }
         }
+        public int SkillPoint {
+            get {
+                return _skillPoint;
+            }
+        }
         public DianaStrawberryType GameTarget {
             get {
                 return _gameTarget;
@@ -78,14 +85,19 @@ namespace MergeDiana_GUI.ViewModel {
                 OnPropertyChanged(nameof(GameTarget));
             }
         }
-        public int SkillPoint {
-            get {
-                return _skillPoint;
-            }
-        }
 
-        public GameSetter() {
+        private GameSetter() {
             TargetStrawberries = new ObservableCollection<DianaStrawberryType>();
+        }
+        public static GameSetter GetInstance() {
+            if (_singletonObject == null) {
+                lock (_singletonLocker) {
+                    if (_singletonObject == null) {
+                        _singletonObject = new GameSetter();
+                    }
+                }
+            }
+            return _singletonObject;
         }
 
         private void OnPropertyChanged(string propertyName) {
