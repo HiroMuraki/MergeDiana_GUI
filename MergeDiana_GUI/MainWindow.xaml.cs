@@ -153,9 +153,13 @@ namespace MergeDiana_GUI {
                     direction = Direction.Right;
                     break;
                 default:
+                    direction = Direction.None;
                     break;
             }
             e.Handled = true;
+            if (direction == Direction.None) {
+                return;
+            }
             HighlightDirectionButton(direction);
             _game.Move(direction);
             await Task.Delay(TimeSpan.FromMilliseconds(50));
