@@ -129,8 +129,7 @@
 
                     </UniformGrid>
 
-                    <Canvas Grid.RowSpan="3" Grid.ColumnSpan="3" x:Name="GamePlayAreaCanvas" Width="500" Height="500">
-                    </Canvas>
+                    <Canvas Grid.RowSpan="3" Grid.ColumnSpan="3" x:Name="GamePlayAreaCanvas" Width="500" Height="500"/>
                 </Grid>
             </Viewbox>
         </Grid>

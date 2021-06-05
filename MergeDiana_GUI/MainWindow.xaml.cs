@@ -167,6 +167,9 @@ namespace MergeDiana_GUI {
         private void GameGesture_MouseUp(object sender, MouseButtonEventArgs e) {
             Point releasePos = e.GetPosition(GamePlayAreaCanvas);
             Direction direction = GetDirectionFromPosChange(_hitPos, releasePos);
+            if (direction == Direction.None) {
+                return;
+            }
             _game.Move(direction);
             ClearDirectionLine();
             ResetDirectionButtonStatus();
