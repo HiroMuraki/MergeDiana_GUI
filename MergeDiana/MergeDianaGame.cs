@@ -10,6 +10,7 @@ namespace MergeDiana {
         private DianaStrawberryType _gameTarget;
         private DianaStrawberry[,] _dianaStrawberries;
         private int _skillPoint;
+        private int _holdTimes;
 
         #region 公开事件
         public event PropertyChangedEventHandler PropertyChanged;
@@ -84,6 +85,7 @@ namespace MergeDiana {
             if (rowSize < 3 || columnSize < 3) {
                 throw new NotSupportedException();
             }
+            _holdTimes = 0;
             _rowSize = rowSize;
             _columnSize = columnSize;
             _gameTarget = gameTarget;
@@ -174,6 +176,9 @@ namespace MergeDiana {
                             }
                         }
                     }
+                    break;
+                case MergeDianaGameSkill.HoldOn:
+                    _holdTimes = 3;
                     break;
                 default:
                     break;
@@ -302,6 +307,10 @@ namespace MergeDiana {
             }
         }
         private void GenerateRandomStrawberry() {
+            if (_holdTimes > 0) {
+                _holdTimes -= 1;
+                return;
+            }
             // 搜索可以填充的空白区
             List<Coordinate> nullCoordinates = new List<Coordinate>();
             for (int row = 0; row < _rowSize; row++) {

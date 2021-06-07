@@ -83,19 +83,7 @@ namespace MergeDiana_GUI {
             _game.Move(e.Direction);
         }
         private void ActiveSkill_Click(object sender, SClickEventArgs e) {
-            switch (e.Skill) {
-                case MergeDianaGameSkill.Randomize:
-                    _game.ActiveSkill(MergeDianaGameSkill.Randomize, null);
-                    break;
-                case MergeDianaGameSkill.UpgradeBase:
-                    _game.ActiveSkill(MergeDianaGameSkill.UpgradeBase, null);
-                    break;
-                case MergeDianaGameSkill.DegradeAll:
-                    _game.ActiveSkill(MergeDianaGameSkill.DegradeAll, null);
-                    break;
-                default:
-                    break;
-            }
+            _game.ActiveSkill(e.Skill, null);
         }
         private void Game_GameCompleted(object sender, GameCompletedEventArgs e) {
             // 模糊背景

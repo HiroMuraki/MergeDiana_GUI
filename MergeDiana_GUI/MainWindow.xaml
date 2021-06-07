@@ -101,6 +101,7 @@
                     <View:SButton Content="RND" Skill="Randomize" ToolTip="打乱所有草莓" Width="60" Height="30" SClick="ActiveSkill_Click"/>
                     <View:SButton Content="UP" Skill="UpgradeBase" ToolTip="强化基础草莓" Width="60" Height="30" SClick="ActiveSkill_Click"/>
                     <View:SButton Content="DOWN" Skill="DegradeAll" ToolTip="弱化所有草莓" Width="60" Height="30" SClick="ActiveSkill_Click"/>
+                    <View:SButton Content="HOLD" Skill="HoldOn" ToolTip="接下来三次移动不生成草莓" Width="60" Height="30" SClick="ActiveSkill_Click"/>
                 </UniformGrid>
                 <Button Grid.Column="2" Content="&#x2501;" Click="Window_Minimum" Style="{StaticResource TitleButtonStyle}"/>
                 <Button Grid.Column="3" Content="&#x2573;" Click="Window_Close" Style="{StaticResource TitleButtonStyle}"/>
@@ -151,19 +152,16 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <ComboBox Grid.Column="2" Grid.RowSpan="2" Width="70" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                    <Slider Grid.Column="0" Grid.Row="0" ToolTip="行数" Minimum="{Binding GameSetter.MinSize}" Maximum="{Binding GameSetter.MaxSize}" Value="{Binding GameSetter.RowSize}" VerticalAlignment="Center" Style="{StaticResource RSliderBarStyle}"/>
+                    <Slider Grid.Column="0" Grid.Row="1" ToolTip="列数" Minimum="{Binding GameSetter.MinSize}" Maximum="{Binding GameSetter.MaxSize}" Value="{Binding GameSetter.ColumnSize}" VerticalAlignment="Center" Style="{StaticResource RSliderBarStyle}"/>
+                    <ComboBox Grid.Column="1" Grid.RowSpan="2" Width="80" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                               SelectedItem="{Binding GameSetter.GameTarget}" ItemsSource="{Binding GameSetter.TargetStrawberries}"
-                              Margin="5,0" Height="50" Style="{StaticResource TComboBoxStyle}" ItemTemplate="{StaticResource StrawberryComboBoxItem}"
+                              Margin="5,0" Height="70" Style="{StaticResource TComboBoxStyle}" ItemTemplate="{StaticResource StrawberryComboBoxItem}"
                               ToolTip="目标">
                     </ComboBox>
-                    <Label Grid.Column="0" Grid.Row="0" Width="20" Foreground="White" FontSize="14" Content="{Binding GameSetter.RowSize}"/>
-                    <Slider Grid.Column="1" Grid.Row="0" ToolTip="行数" Minimum="{Binding GameSetter.MinSize}" Maximum="{Binding GameSetter.MaxSize}" Value="{Binding GameSetter.RowSize}" VerticalAlignment="Center" Style="{StaticResource RSliderBarStyle}"/>
-                    <Label Grid.Column="0" Grid.Row="1" Width="20" Foreground="White" FontSize="14" Content="{Binding GameSetter.ColumnSize}"/>
-                    <Slider Grid.Column="1" Grid.Row="1" ToolTip="列数" Minimum="{Binding GameSetter.MinSize}" Maximum="{Binding GameSetter.MaxSize}" Value="{Binding GameSetter.ColumnSize}" VerticalAlignment="Center" Style="{StaticResource RSliderBarStyle}"/>
                 </Grid>
                 <Button Grid.Row="2" Content="S T A R T" Width="200" Height="40" Style="{StaticResource StartButtonStyle}" Click="StartGame_Click"/>
             </Grid>
